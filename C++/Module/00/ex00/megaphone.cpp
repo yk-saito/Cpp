@@ -6,12 +6,19 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:01:57 by ysaito            #+#    #+#             */
-/*   Updated: 2021/05/24 22:04:39 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/05/25 15:11:04 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <locale>
+
+char	ft_toupper(char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -33,7 +40,7 @@ int	main(int argc, char *argv[])
 		{
 			if (argv[count][i] != '"')
 			{
-				std::cout << std::toupper(argv[count][i], loc);
+				std::cout << ft_toupper(argv[count][i]);
 			}
 			i++;
 		}

@@ -6,7 +6,7 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 14:01:53 by ysaito            #+#    #+#              #
-#    Updated: 2021/05/24 22:39:48 by ysaito           ###   ########.fr        #
+#    Updated: 2021/05/25 15:02:19 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ $(NAME):	$(OBJS)
 
 all:		$(NAME)
 
-clean:
-			$(RM) $(OBJS)
+#clean:
+#			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
