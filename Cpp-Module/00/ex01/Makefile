@@ -6,12 +6,13 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 22:39:51 by ysaito            #+#    #+#              #
-#    Updated: 2021/05/24 22:40:12 by ysaito           ###   ########.fr        #
+#    Updated: 2021/05/25 16:01:53 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
-SRCS		= .cpp
+NAME		= phonebook
+SRCS		= main.cpp
+			+= phonebook.cpp
 OBJS		= $(SRCS:.c=.o)
 
 CC			= clang++
@@ -23,8 +24,8 @@ $(NAME):	$(OBJS)
 
 all:		$(NAME)
 
-clean:
-			$(RM) $(OBJS)
+#clean:
+#			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
