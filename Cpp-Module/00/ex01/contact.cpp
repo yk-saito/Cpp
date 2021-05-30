@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:00:45 by ysaito            #+#    #+#             */
-/*   Updated: 2021/05/25 16:18:58 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/05/30 17:11:59 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "contact.hpp"
 
-int	Phonebook::getCount()
-{
-	return (m_count);
-}
+// int	Phonebook::getCount()
+// {
+// 	return (m_count);
+// }
