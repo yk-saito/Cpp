@@ -6,14 +6,14 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 22:39:51 by ysaito            #+#    #+#              #
-#    Updated: 2021/05/30 17:11:29 by ysaito           ###   ########.fr        #
+#    Updated: 2021/05/31 18:10:44 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
 SRCS		= main.cpp
 			+= contact.cpp
-OBJS		= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror
