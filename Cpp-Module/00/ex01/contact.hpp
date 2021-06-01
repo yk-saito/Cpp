@@ -14,7 +14,6 @@
 # define _CONTACT_HPP_
 
 # include <string>
-# include <iostream>//del
 
 class Contact
 {
@@ -46,6 +45,9 @@ public:
 	std::string	getEmailAddr();
 	void		setPhoneNumber(std::string input_phone_number);
 	std::string	getPhoneNumber();
+	void		setContact(Contact *contact);
+	void		displayList(Contact contact);
+	void		displayContact(Contact contact);
 };
 
 #endif // _CONTACT_HPP_

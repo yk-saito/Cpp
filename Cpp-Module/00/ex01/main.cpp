@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:15:55 by ysaito            #+#    #+#             */
-/*   Updated: 2021/05/31 23:21:07 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/01 15:57:56 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,107 +15,57 @@
 #include <iostream>
 #include <string>
 
-void	set_contact(Contact *contact, int count)
-{
-	std::string	input_info;
-
-	contact[count].setEnteredFlag();
-	std::cout << "first name : ";
-	std::cin >> input_info;
-	contact[count].setFirstName(input_info);
-	std::cout << "last name : ";
-	std::cin >> input_info;
-	contact[count].setLastName(input_info);
-	std::cout << "nickname : ";
-	std::cin >> input_info;
-	contact[count].setNickname(input_info);
-	std::cout << "login : ";
-	std::cin >> input_info;
-	contact[count].setLogin(input_info);
-	std::cout << "postal address : ";
-	std::cin >> input_info;
-	contact[count].setPostalAddr(input_info);
-	std::cout << "email address : ";
-	std::cin >> input_info;
-	contact[count].setEmailAddr(input_info);
-	std::cout << "phone number : ";
-	std::cin >> input_info;
-	contact[count].setPhoneNumber(input_info);
-	std::cin.clear();
-}
-
-std::string	format(std::string str)
-{
-	if (str.length() >= 10)
-	{
-		str.resize(9);
-		unsigned resize_len = str.size();
-		str.resize(resize_len + 1, '.');
-		//str.resize(10, '.');
-	}
-	return (str);
-}
-
 int	main(void)
 {
 	Contact		contact[8];
 	std::string	command;
 	int			input_idx;
 	int			count;
+	int			i;
 
 	count = 0;
 	while (1)
 	{
-		std::cout << std::endl << "Waiting for command input" << std::endl;
+		std::cout << std::endl << "Waiting for command..." << std::endl;
 		std::cout << "(ADD / SEARCH / EXIT)" << std::endl << ">> ";
 		std::cin >> command;
 		if (command.compare("ADD") == 0)
 		{
-			//std::cout << "input ADD command" << std::endl;//del
 			if (count > 7)
-			{
 				std::cout << "Contact is full." << std::endl;
-			}
 			else
 			{
-				set_contact(contact, count);
+				contact[count].setContact(&contact[count]);
 				count++;
 			}
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			//std::cout << "input SEARCH command" << std::endl;//del
-			int	i = 0;
+			i = 0;
 			if (count)
 			{
 				while (i < count)
 				{
-						std::cout << std::setw(10) << i << "|";
-						std::cout << std::setw(10) << format(contact[i].getFirstName()) << "|";
-						std::cout << std::setw(10) << format(contact[i].getLastName()) << "|";
-						std::cout << std::setw(10) << format(contact[i].getNickname()) << "|" << std::endl;
+						// std::cout << std::setw(10) << i << "|";
+						// std::cout << std::setw(10) << format(contact[i].getFirstName()) << "|";
+						// std::cout << std::setw(10) << format(contact[i].getLastName()) << "|";
+						// std::cout << std::setw(10) << format(contact[i].getNickname()) << "|" << std::endl;
+					contact[i].displayList(contact[i]);
 					i++;
 				}
 			}
-			std::cout << "Please enter the contact index" << std::endl << ">> ";
-			// std::cin >> input_idx;
-			// while (true)
-			// {
-				try
+			while (1)
+			{
+				std::cout << "Please enter from 0 to 7." << std::endl << ">> ";
+				std::cin >> input_idx;
+				if (!std::cin.fail())
 				{
-					std::cin >> input_idx;
+					break ;
 				}
-				//catch(const std::exception& e)
-				catch(char *pstr)
-				{
-					//std::cerr << e.what() << '\n';
-					std::cin.clear();//例外を消去
-					//std::cin.seekg(0);
-					continue ;
-				}
-				// break ;
-			// }
-			if (input_idx > 7)
+				std::cin.clear();
+				std::cin.ignore(1024, '\n');
+			}
+			if (input_idx < 0 || input_idx > 7)
 			{
 				std::cout << "[" << input_idx << "] does not exist." << std::endl;
 			}
@@ -125,25 +75,17 @@ int	main(void)
 			}
 			else
 			{
-				std::cout << "[first name]" << contact[input_idx].getFirstName();
-				std::cout << "[last name]" << contact[input_idx].getLastName();
-				std::cout << "[nickname]" << contact[input_idx].getNickname();
-				std::cout << "[login]" << contact[input_idx].getLogin();
-				std::cout << "[postal address]" << contact[input_idx].getPostalAddr();
-				std::cout << "[email address]" << contact[input_idx].getEmailAddr();
-				std::cout << "[phone number]" << contact[input_idx].getPhoneNumber() << std::endl;;
+				contact[input_idx].displayContact(contact[input_idx]);
 			}
 		}
 		else if (command.compare("EXIT") == 0)
 		{
-			//std::cout << "input EXIT command" << std::endl;
 			return (0);
 		}
 		else
 		{
-			std::cout << "Please input the [ADD / SEARCH / EXIT] command." << std::endl;
+			std::cout << "Command error." << std::endl;
 		}
-		std::cin.clear();//これしないとバッファオーバーフロー起きるよ
 	}
 	return (0);
 }
