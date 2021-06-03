@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:24 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/03 19:32:16 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/03 18:19:30 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/03 18:23:34 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	std::string	m_type;
 public:
 	Zombie();
-	Zombie(std::string name,  std::string type);
+	Zombie(std::string name);
 	~Zombie();
 	void	announce();
 };
