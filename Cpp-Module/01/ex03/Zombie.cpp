@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 18:20:01 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/03 18:23:25 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/02 10:40:15 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 13:07:42 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 #include <iostream>
 #include <iostream>
 
-Zombie::Zombie() : m_name("None"), m_type("None")
+Zombie::Zombie()
 {
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name, std::string type)
 {
 	m_name = name;
+	m_type = type;
 }
 
 Zombie::~Zombie()
@@ -28,8 +29,9 @@ Zombie::~Zombie()
 }
 
 /*
-** ゾンビの名前とタイプを出力
+** Output zombie name and zombie type"
 */
 void	Zombie::announce()
 {
 	std::cout << "< "  << m_name << " (" << m_type << ") >　" << "Braiiiiiiinnnssss..." << std::endl;
+}

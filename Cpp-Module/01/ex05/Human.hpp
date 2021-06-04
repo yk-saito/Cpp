@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:59 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 14:20:20 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 17:22:47 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 19:52:01 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEEVENT_HPP_
-# define _ZOMBIEEVENT_HPP_
+#ifndef _HUMAN_HPP_
+# define _HUMAN_HPP_
 
-# include "Zombie.hpp"
+# include "Brain.hpp"
 # include <string>
 
-# define STORE_ZOMBIE_NUM 6
-# define CREATE_ZOMBIE_NUM 3
-
-class ZombieEvent : public Zombie {
+class Human : public Brain {
 private:
-	std::string	m_type;
+
 public:
-	ZombieEvent();
-	~ZombieEvent();
-	int		createRandomNum();
-	void	setZombieType(std::string type);
-	Zombie* newZombie(std::string name);
-	Zombie*	randomChump();
+	Human(void);
+	~Human(void);
+	Brain	*identify(void);
+	Brain 	getBrain(void);
 };
 
-#endif // _ZOMBIEEVENT_HPP_
+#endif  // _HUMAN_HPP_

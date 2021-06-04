@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 15:25:20 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:50:33 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 17:30:47 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 19:52:36 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Brain.hpp"
+#include <string>
+#include <iostream>
 
-ZombieHorde::ZombieHorde(/* args */)
+Brain::Brain(void)
 {
 }
 
-ZombieHorde::ZombieHorde(int N)
-{
-
-}
-
-ZombieHorde::~ZombieHorde()
+Brain::~Brain(void)
 {
 }
 
-void	ZombieHorde::announce()
+/*
+**	Returns a string containing the brain’s address in memory,
+**	in hexadecimal format, prefixed by 0x (For example, "0x194F87EA").
+*/
+Brain	*Brain::identify(void)
 {
-	Zombie::announce();
+	Brain		*pBrain = this;
+
+	// std::cout << pBrain << std::endl;
+	return (this);
+	//return ("test");
 }

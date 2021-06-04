@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 15:25:20 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:50:33 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 17:33:28 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 19:53:36 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Human.hpp"
 
-ZombieHorde::ZombieHorde(/* args */)
+Human::Human(void)
+{
+}
+Human::~Human(void)
 {
 }
 
-ZombieHorde::ZombieHorde(int N)
-{
 
+Brain	*Human::identify(void)
+{
+	return (Brain::identify());
 }
 
-ZombieHorde::~ZombieHorde()
+Brain	Human::getBrain(void)
 {
-}
+	Brain	brain;
 
-void	ZombieHorde::announce()
-{
-	Zombie::announce();
+	return (brain);
 }

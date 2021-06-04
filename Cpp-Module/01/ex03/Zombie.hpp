@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 18:19:30 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/03 18:23:34 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/01 22:05:24 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 14:19:08 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 # include <string>
 
-class Zombie
-{
+class Zombie {
 private:
 	std::string	m_name;
 	std::string	m_type;
 public:
 	Zombie();
-	Zombie(std::string name);
+	Zombie(std::string name,  std::string type);
 	~Zombie();
 	void	announce();
 };

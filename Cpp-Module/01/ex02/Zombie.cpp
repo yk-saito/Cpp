@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 10:40:15 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/03 19:32:07 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/04 13:07:42 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Zombie::~Zombie()
 }
 
 /*
-** ゾンビの名前とタイプを出力
+** Output zombie name and zombie type"
 */
 void	Zombie::announce()
 {

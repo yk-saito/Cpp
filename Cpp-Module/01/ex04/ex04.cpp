@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 15:25:20 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:50:33 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 16:25:38 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 16:42:46 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include <iostream>
+#include <string>
 
-ZombieHorde::ZombieHorde(/* args */)
+void	to_pointer(std::string *pstr)
 {
+	std::cout << "pointer: " << *pstr << std::endl;
 }
 
-ZombieHorde::ZombieHorde(int N)
+void	to_reference(std::string& rstr)
 {
-
+	std::cout << "reference: " << rstr << std::endl;
 }
 
-ZombieHorde::~ZombieHorde()
+int	main(void)
 {
-}
+	std::string	str = "HI THIS IS BRAIN";
 
-void	ZombieHorde::announce()
-{
-	Zombie::announce();
+	to_pointer(&str);
+	to_reference(str);
+
+	return (0);
 }

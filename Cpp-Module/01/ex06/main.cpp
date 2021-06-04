@@ -5,35 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 15:24:54 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:52:51 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 20:22:00 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 22:30:31 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include <iostream>
 
-int	main(void)
+int main(void)
 {
-	//作成したいゾンビの数を入力する
-	//Nに入れて、コンストラクタの引数に
-	//N個のゾンビオブジェクトクラスを作成(Name random)
-	//announce()をよぶ
-	//delete
-	ZombieHorde	*zombies;
-	int			num_zombie;
-	int			idx;
-
-	std::cout << "Please enter the number of Zombies. >> ";
-	std::cin >> num_zombie;
-	zombies = new ZombieHorde(num_zombie);
-	idx = 0;
-	while (idx < num_zombie)
 	{
-		zombies[idx].announce();
-		idx++;
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	delete[] zombies;
+	// {
+	// 	Weapon club = Weapon("crude spiked club");
+	// 	HumanB jim("Jim");
+	// 	jim.setWeapon(club);
+	// 	jim.attack();
+	// 	club.setType("some other type of club");
+	// 	jim.attack();
+	// }
 	return (0);
 }

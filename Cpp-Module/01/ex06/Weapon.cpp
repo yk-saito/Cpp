@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 15:25:20 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:50:33 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 20:08:04 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 22:36:05 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Weapon.hpp"
+#include <string>
 
-ZombieHorde::ZombieHorde(/* args */)
+Weapon::Weapon(void)
 {
 }
 
-ZombieHorde::ZombieHorde(int N)
+Weapon::Weapon(std::string type)
 {
-
+	setType(type);
 }
 
-ZombieHorde::~ZombieHorde()
+Weapon::~Weapon(void)
 {
 }
 
-void	ZombieHorde::announce()
+void	Weapon::setType(std::string type)
 {
-	Zombie::announce();
+	m_type = type;
+}
+
+std::string	Weapon::getType(void)
+{
+	return (m_type);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:59 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 14:20:20 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/04 20:28:04 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/04 22:20:34 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEEVENT_HPP_
-# define _ZOMBIEEVENT_HPP_
+#ifndef _HUMANB_HPP_
+# define _HUMANB_HPP_
 
-# include "Zombie.hpp"
+# include "Weapon.hpp"
 # include <string>
 
-# define STORE_ZOMBIE_NUM 6
-# define CREATE_ZOMBIE_NUM 3
-
-class ZombieEvent : public Zombie {
+class HumanB : public Weapon {
 private:
-	std::string	m_type;
+	std::string m_name;
 public:
-	ZombieEvent();
-	~ZombieEvent();
-	int		createRandomNum();
-	void	setZombieType(std::string type);
-	Zombie* newZombie(std::string name);
-	Zombie*	randomChump();
+	HumanB(void);
+	HumanB(std::string name);
+	~HumanB(void);
+	void	setWeapon(Weapon weapon);
+	void	attack();
 };
 
-#endif // _ZOMBIEEVENT_HPP_
+#endif // _HUMANB_HPP_

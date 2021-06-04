@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 10:55:29 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/03 23:25:20 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/04 14:18:27 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	ZombieEvent::createRandomNum()
 {
 	int	rand_num;
 
-	rand_num = (0 + rand() % ZOMBIE_NUM);  // [MIN] ＋ rand() % [Number you want]
+	rand_num = (0 + rand() % STORE_ZOMBIE_NUM);  // [MIN] ＋ rand() % [Number you want]
 	return (rand_num);
 }
 
 /*
-** オブジェクトにゾンビのTypeを格納
+** Store zombie type in object
 */
 void	ZombieEvent::setZombieType(std::string type)
 {
@@ -48,7 +48,7 @@ Zombie*	ZombieEvent::newZombie(std::string name)
 }
 
 /*
-**  create a Zombie with a random name
+**  Create a Zombie with a random name
 */
 Zombie*	ZombieEvent::randomChump()
 {
