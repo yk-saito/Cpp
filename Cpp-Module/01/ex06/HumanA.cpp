@@ -6,14 +6,14 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:19:03 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 22:30:21 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:51:00 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(void)
+HumanA::HumanA()
 {
 }
 
@@ -23,7 +23,7 @@ HumanA::HumanA(std::string name, Weapon& weapon)
 	m_pWeapon = weapon;
 }
 
-HumanA::~HumanA(void)
+HumanA::~HumanA()
 {
 }
 

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:22:47 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 19:52:01 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:50:28 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Human : public Brain {
 private:
 
 public:
-	Human(void);
-	~Human(void);
+	Human();
+	~Human();
 	Brain	*identify(void);
 	Brain 	getBrain(void);
 };

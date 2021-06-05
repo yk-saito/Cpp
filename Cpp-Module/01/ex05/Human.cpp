@@ -6,16 +6,16 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:33:28 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 19:53:36 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:50:48 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 
-Human::Human(void)
+Human::Human()
 {
 }
-Human::~Human(void)
+Human::~Human()
 {
 }
 

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 22:05:24 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 14:19:08 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:50:08 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	Zombie();
 	Zombie(std::string name,  std::string type);
 	~Zombie();
+	void	setName(const char *name);
 	void	announce();
 };
 

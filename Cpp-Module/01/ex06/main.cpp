@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:22:00 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 22:30:31 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 14:47:45 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,11 @@ int main(void)
 	// }
 	return (0);
 }
+
+/*
+Bob ~ crude spiked club
+Bob ~ some other type of club
+Jim ~ crude spiked club
+Jim ~ some other type of club
+
+*/

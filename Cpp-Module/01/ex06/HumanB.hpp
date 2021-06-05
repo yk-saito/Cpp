@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:28:04 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 22:20:34 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:51:04 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class HumanB : public Weapon {
 private:
 	std::string m_name;
 public:
-	HumanB(void);
+	HumanB();
 	HumanB(std::string name);
-	~HumanB(void);
+	~HumanB();
 	void	setWeapon(Weapon weapon);
 	void	attack();
 };

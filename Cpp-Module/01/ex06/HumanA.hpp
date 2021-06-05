@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:09:48 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 22:29:46 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:50:56 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ private:
 	std::string	m_name;
 	Weapon		m_pWeapon;
 public:
-	HumanA(void);
+	HumanA();
 	HumanA(std::string name, Weapon& weapon);
-	~HumanA(void);
+	~HumanA();
 	void	attack(void);
 };
 

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:32:10 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/01 21:23:07 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 16:49:29 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 # include <string>
 
-class Pony
-{
+class Pony {
 private:
-	/* data */
 	std::string m_name;
 public:
-	Pony(/* args */);
+	Pony();
 	~Pony();
 	void		setName(std::string name);
 	std::string	getName();

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:23:45 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 15:50:09 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/05 15:50:02 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 
 class ZombieHorde : public Zombie {
 private:
-	/* data */
+	Zombie		*m_zombies;
+	int			m_zombies_num;
 public:
-	ZombieHorde(/* args */);
+	ZombieHorde();
 	ZombieHorde(int N);
 	~ZombieHorde();
+	int		createRandomNum();
+	void	setRandomName();
 	void	announce();
 };
 
