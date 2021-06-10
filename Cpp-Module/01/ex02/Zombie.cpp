@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 10:40:15 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 13:07:42 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/10 23:04:14 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ Zombie::~Zombie()
 */
 void	Zombie::announce()
 {
-	std::cout << "< "  << m_name << " (" << m_type << ") >　" << "Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "< "  << m_name << " (" << m_type << ") >　"
+				<< "Braiiiiiiinnnssss..." << std::endl;
 }

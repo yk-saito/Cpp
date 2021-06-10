@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:44:35 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/01 21:42:48 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/10 23:02:31 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,6 @@ int	main(void)
 	std::cout << "name=" << stackPony.getName() << std::endl;
 	ponyOnTheHeap(heapPony);
 	ponyOnTheStack(&stackPony);
-	// std::cout << "---END---------------------" << std::endl;
-	// std::cout << "[heap Pony]";
-	// std::cout << "name=" << heapPony->getName() << std::endl;
-	// std::cout << "[stack Pony]";
-	// std::cout << "name=" << stackPony.getName() << std::endl;
 	delete heapPony;
 	return (0);
 }
