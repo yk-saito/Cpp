@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:41:25 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/01 21:38:24 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:23:14 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ void	Pony::setName(std::string name)
 std::string	Pony::getName()
 {
 	return (m_name);
+}
+
+void	Pony::callName()
+{
+	std::cout << "Come on [" << getName() << "] !!!" <<  std::endl;
 }

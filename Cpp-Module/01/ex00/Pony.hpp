@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:32:10 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/05 16:49:29 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:13:57 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	~Pony();
 	void		setName(std::string name);
 	std::string	getName();
+	void		callName();
 };
 
 #endif // _PONY_HPP_

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:44:35 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/10 23:02:31 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:44:08 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,29 @@
 #include <iostream>
 #include <string>
 
-void	ponyOnTheHeap(Pony *heapPony)
+void	ponyOnTheHeap(void)
 {
-	//Pony		*heapPony;
-	std::string	name;
-	std::string	action;
-
-	// heapPony = new Pony();
-	std::cout << "Please enter the name of the heapPony." << std::endl;
-	std::cout << "name : ";
-	std::cin >> name;
-	heapPony->setName(name);
-
 	std::cout << "---in ponyOnTheHeap()-------" << std::endl;
-	std::cout << "[heap Pony]";
-	std::cout << "name=" << heapPony->getName() << std::endl << std::endl;
-	//return (heapPony);
+	Pony	*heapPony;
+
+	heapPony = new Pony();
+	heapPony->setName("HEAP");
+	heapPony->callName();
+	delete heapPony;
 }
 
-void	ponyOnTheStack(Pony *stackPony)
+void	ponyOnTheStack(void)
 {
-	//Pony		stackPony;
-	std::string	name;
-	std::string	action;
-
-	// pPony = new Pony();
-	std::cout << "Please enter the name of the stackPony." << std::endl;
-	std::cout << "name : ";
-	std::cin >> name;
-	stackPony->setName(name);
-
 	std::cout << "---in ponyOnTheStack()------" << std::endl;
-	std::cout << "[stack Pony]";
-	std::cout << "name=" << stackPony->getName() << std::endl << std::endl;
-//	return (stackPony);
+	Pony	stackPony;
+
+	stackPony.setName("STACK");
+	stackPony.callName();
 }
 
 int	main(void)
 {
-	Pony	*heapPony;
-	Pony	stackPony;
-
-	heapPony = new Pony();
-	std::cout << "---START-------------------" << std::endl;
-	std::cout << "[heap Pony]";
-	std::cout << "name=" << heapPony->getName() << std::endl;
-	std::cout << "[stack Pony]";
-	std::cout << "name=" << stackPony.getName() << std::endl;
-	ponyOnTheHeap(heapPony);
-	ponyOnTheStack(&stackPony);
-	delete heapPony;
+	ponyOnTheHeap();
+	ponyOnTheStack();
 	return (0);
 }
