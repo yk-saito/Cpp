@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 17:44:35 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/12 20:44:08 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/15 18:13:15 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ void	ponyOnTheHeap(void)
 	std::cout << "---in ponyOnTheHeap()-------" << std::endl;
 	Pony	*heapPony;
 
-	heapPony = new Pony();
+	try
+	{
+		heapPony = new Pony();
+	}
+	catch(const std::bad_alloc& ba)
+	{
+		std::cerr << "Caught Error " <<  ba.what() << '\n';
+		return ;
+	}
 	heapPony->setName("HEAP");
 	heapPony->callName();
 	delete heapPony;

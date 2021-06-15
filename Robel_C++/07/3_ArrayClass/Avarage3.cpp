@@ -10,8 +10,7 @@ using namespace  std;
 bool	Average(ArrayStream stream)
 {
 	int		count;
-	double	n;
-	double	avr;
+	double	avr = 0;
 
 	for (count = 0; stream.Set(); ++count)
 	{

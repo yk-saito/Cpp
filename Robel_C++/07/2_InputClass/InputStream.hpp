@@ -8,8 +8,8 @@ private:
 public:
 	InputStream(/* args */);
 	~InputStream();
-	double	getInput() const;
-	bool	setInput();
+	double	Get() const;
+	bool	Set();
 };
 
 #endif // _INPUTSTREAM_HPP_

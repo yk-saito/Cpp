@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:19:03 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/05 16:51:00 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/15 23:19:36 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ HumanA::HumanA()
 {
 }
 
-HumanA::HumanA(std::string name, Weapon& weapon)
+HumanA::HumanA(std::string name, Weapon weapon)
 {
 	m_name = name;
 	m_pWeapon = weapon;

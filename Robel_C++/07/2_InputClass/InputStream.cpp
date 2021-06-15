@@ -14,7 +14,7 @@ InputStream::~InputStream()
 /*
 	設定された値を取得
 */
-double	InputStream::getInput() const
+double	InputStream::Get() const
 {
 	return  (m_num);
 }
@@ -22,7 +22,7 @@ double	InputStream::getInput() const
 /*
 	新しい値を設定
 */
-bool	InputStream::setInput()
+bool	InputStream::Set()
 {
 	cin >> m_num;
 	return (m_num >= 0);

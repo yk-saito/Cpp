@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:30:47 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/05 16:50:42 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/15 18:27:46 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ Brain::~Brain()
 */
 Brain	*Brain::identify(void)
 {
-	Brain		*pBrain = this;
+	// Brain		*pBrain = this;
 
-	// std::cout << pBrain << std::endl;
+	// std::cout << "test " << pBrain << std::endl;
 	return (this);
 	//return ("test");
 }

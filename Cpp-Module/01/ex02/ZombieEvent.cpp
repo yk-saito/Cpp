@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 10:55:29 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 14:18:27 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/15 16:59:31 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Zombie*	ZombieEvent::randomChump()
 	ZombieEvent	event;
 	const char	*rand_name[] = {"Cerberus", "Licker", "Nemesis", "Tyrant", "Valentine", "Wesker"};
 
-	event.setZombieType("R_type");
+	event.setZombieType("RANDOM_type");
 	rand_zombie = event.newZombie(rand_name[createRandomNum()]);
 	rand_zombie->announce();
 	return (rand_zombie);

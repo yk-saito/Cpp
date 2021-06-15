@@ -10,12 +10,11 @@ using namespace  std;
 bool	Average(InputStream stream)
 {
 	int		count;
-	double	n;
 	double	avr;
 
-	for (count = 0; stream.setInput(); ++count)
+	for (count = 0; stream.Set(); ++count)
 	{
-		avr += stream.getInput();
+		avr += stream.Get();
 	}
 	if (count == 0)
 	{
