@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:08:04 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/16 14:54:29 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/16 20:33:40 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Weapon::~Weapon()
 void	Weapon::setType(std::string type)
 {
 	m_type = type;
-	std::cout << "[test]" << getType() << std::endl;//del
 }
 
 const std::string&	Weapon::getType(void)

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:09:48 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/16 18:07:40 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/16 20:34:12 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 class  HumanA : public Weapon {
 private:
 	std::string	m_name;
-	//Weapon		m_weapon;
-	const std::string	*m_weapon;
+	Weapon		*m_CWeapon;
 public:
 	HumanA();
 	HumanA(std::string name, Weapon& weapon);
