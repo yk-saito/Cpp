@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:05:02 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/15 23:30:33 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/16 14:43:29 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Weapon {
 private:
-	const std::string&	m_type;
+	std::string	m_type;
 public:
 	Weapon();
-	Weapon(const std::string& type);
+	Weapon(const std::string type);
 	~Weapon();
-	void				setType(const std::string& type);
+	void				setType(std::string type);
 	const std::string&	getType(void);
 };
 
