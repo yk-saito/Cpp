@@ -6,13 +6,14 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/16 20:53:22 by ysaito            #+#    #+#              #
-#    Updated: 2021/06/16 20:54:34 by ysaito           ###   ########.fr        #
+#    Updated: 2021/06/21 17:29:29 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= replace
 SRC_DIR		= .
 SRC_FILE	= main.cpp
+SRC_FILE	+= File.cpp
 SRCS		= $(addprefix $(SRC_DIR)/,$(SRC_FILE))
 OBJS		= $(SRCS:.cpp=.o)
 
