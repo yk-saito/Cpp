@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 17:32:10 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/12 20:13:57 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 13:51:52 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 13:55:06 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _PONY_HPP_
-# define _PONY_HPP_
+#include "Zombie.hpp"
+#include <string>
 
-# include <string>
+Zombie* newZombie(std::string name)
+{
+	Zombie	*new_zombie;
 
-class Pony {
-private:
-	std::string m_name;
-public:
-	Pony();
-	~Pony();
-	void		setName(std::string name);
-	std::string	getName();
-	void		callName();
-};
-
-#endif // _PONY_HPP_
+	new_zombie = new Zombie(name);
+	return (new_zombie);
+}

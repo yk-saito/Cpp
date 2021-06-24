@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 17:41:25 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/12 20:23:14 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 13:48:45 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 14:09:48 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-#include  <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+
 #include <string>
 
-Pony::Pony() : m_name("None")
-{
-	std::cout << "make Pony !" << std::endl;
-}
+class Zombie {
+private:
+	std::string	m_name;
+public:
+	// Zombie();
+	Zombie(std::string name);
+	~Zombie();
+	void	announce();
+};
 
-Pony::~Pony()
-{
-	std::cout << "delete Pony ..." << std::endl;
-}
+Zombie* newZombie(std::string name);
+void	randomChump(std::string name);
 
-void	Pony::setName(std::string name)
-{
-	m_name = name;
-}
-
-std::string	Pony::getName()
-{
-	return (m_name);
-}
-
-void	Pony::callName()
-{
-	std::cout << "Come on [" << getName() << "] !!!" <<  std::endl;
-}
+#endif

@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 14:00:38 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 14:11:59 by ysaito           ###   ########.fr       */
+/*   Created: 2021/05/24 14:01:57 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/19 19:39:37 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <cctype>
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	Zombie	*new_zombie;
+	int	count;
+	int	i;
 
-	new_zombie = newZombie("NEW");
-	new_zombie->announce();
-	randomChump("RANDOM");
-	delete new_zombie;
-
-	//system("leaks zombie");
+	count = 1;
+	if (argc == 1)
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
+	while (argv[count])
+	{
+		i = 0;
+		while (argv[count][i])
+		{
+			if (argv[count][i] != '"')
+			{
+				std::cout << (char)std::toupper(argv[count][i]);
+			}
+			i++;
+		}
+		count++;
+	}
+	std::cout << std::endl;
 	return (0);
 }

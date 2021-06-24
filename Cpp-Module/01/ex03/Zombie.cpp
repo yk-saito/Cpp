@@ -6,39 +6,29 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 10:40:15 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/05 16:36:19 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/24 14:09:03 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
-#include <iostream>
 
 Zombie::Zombie()
 {
-	m_type = "R_type";
 }
 
-Zombie::Zombie(std::string name, std::string type)
+Zombie::Zombie(std::string name)
 {
 	m_name = name;
-	m_type = type;
 }
 
 Zombie::~Zombie()
 {
+	std::cout << "See you Zombie [" << m_name << "] !" << std::endl;
 }
 
-void	Zombie::setName(const char *name)
-{
-	m_name = std::string(name);
-}
-
-/*
-** Output zombie name and zombie type"
-*/
 void	Zombie::announce()
 {
-	std::cout << "< "  << m_name << " (" << m_type << ") >　" << "Braiiiiiiinnnssss..." << std::endl;
-	// std::cout << "< "  << zombieName << " (" << m_type << ") >　" << "Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "< "  << m_name << " >" << " BraiiiiiiinnnzzzZ..." << std::endl;
+	// std::cout << "< "  << zombieName << " (" << m_type << ") >　" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 21:45:41 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/01 21:50:20 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 13:57:45 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 13:59:46 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-void memoryLeak()
+void	randomChump(std::string name)
 {
-	std::string* panther = new std::string("String panther");
-	std::cout << *panther << std::endl;
-	delete panther;
-}
+	Zombie	random_zombie(name);
 
-int	main(void)
-{
-	memoryLeak();
-	return (0);
+	random_zombie.announce();
 }

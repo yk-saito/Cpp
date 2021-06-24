@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 14:00:38 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 14:11:59 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 14:09:28 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 14:09:33 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
-int	main(void)
+// Zombie::Zombie()
+// {
+// }
+
+Zombie::Zombie(std::string name)
 {
-	Zombie	*new_zombie;
+	m_name = name;
+}
 
-	new_zombie = newZombie("NEW");
-	new_zombie->announce();
-	randomChump("RANDOM");
-	delete new_zombie;
+Zombie::~Zombie()
+{
+	std::cout << "See you Zombie [" << m_name << "] !" << std::endl;
+}
 
-	//system("leaks zombie");
-	return (0);
+void	Zombie::announce()
+{
+	std::cout << "< "  << m_name << " >" << " BraiiiiiiinnnzzzZ..." << std::endl;
+	// std::cout << "< "  << zombieName << " (" << m_type << ") >　" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

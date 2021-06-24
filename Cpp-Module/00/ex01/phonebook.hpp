@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 14:00:38 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 14:11:59 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/10 13:29:23 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/19 20:01:22 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef _PHONEBOOK_HPP_
+# define _PHONEBOOK_HPP_
 
-int	main(void)
-{
-	Zombie	*new_zombie;
+# include "contact.hpp"
 
-	new_zombie = newZombie("NEW");
-	new_zombie->announce();
-	randomChump("RANDOM");
-	delete new_zombie;
+class Phonebook {
+private:
+	int		m_count;
+public:
+	Phonebook();
+	~Phonebook();
+	void	setCount();
+	int		getCount();
+	void	clearCommand();
+	void	commandAdd(Contact *contact);
+	void	commandSearch(Contact *contact);
+	void	commandError();
+};
 
-	//system("leaks zombie");
-	return (0);
-}
+#endif // _PHONEBOOK_HPP_
