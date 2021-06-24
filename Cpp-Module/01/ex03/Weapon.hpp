@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:59 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/15 17:01:02 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 21:40:09 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 21:40:50 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEEVENT_HPP_
-# define _ZOMBIEEVENT_HPP_
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-# include "Zombie.hpp"
-# include <string>
-
-# define STORE_ZOMBIE_NUM 6
-# define CREATE_ZOMBIE_NUM 3
-
-class ZombieEvent : public Zombie {
+class Weapon {
 private:
-	std::string	m_type;
+	/* data */
 public:
-	ZombieEvent();
-	~ZombieEvent();
-	int		createRandomNum();
-	void	setZombieType(std::string type);
-	Zombie* newZombie(std::string name);
-	Zombie*	randomChump();
+	Weapon(/* args */);
+	~Weapon();
 };
 
-#endif // _ZOMBIEEVENT_HPP_
+Weapon::Weapon(/* args */)
+{
+}
+
+Weapon::~Weapon()
+{
+}
+
+
+#endif

@@ -5,14 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/24 21:11:35 by ysaito            #+#    #+#              #
-#    Updated: 2021/06/24 21:14:43 by ysaito           ###   ########.fr        #
+#    Created: 2021/06/24 17:26:06 by ysaito            #+#    #+#              #
+#    Updated: 2021/06/24 17:29:02 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= brain
+NAME		= zombie
 SRC_DIR		= .
 SRC_FILE	= main.cpp
+SRC_FILE	+= Zombie.cpp
+SRC_FILE	+= ZombieHorde.cpp
 SRCS		= $(addprefix $(SRC_DIR)/,$(SRC_FILE))
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -5,40 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 16:22:53 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/15 16:59:25 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 21:13:56 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 21:34:43 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include <iostream>
+#include <string>
+
+void	stringPTR(std::string *pstr)
+{
+	std::cout << "pointer  : " << pstr
+			  << " " << *pstr << std::endl;
+}
+
+void	stringREF(std::string& rstr)
+{
+	std::cout << "reference: " << &rstr
+			  << " " << rstr << std::endl;
+}
 
 int	main(void)
 {
-	Zombie		stack_zombie("Stack", "STACK_type");
-	Zombie		*heap_zombie;
-	Zombie		*rand_zombie[CREATE_ZOMBIE_NUM];
-	ZombieEvent	event;
-	int			count;
+	std::string	str = "HI THIS IS BRAIN";
 
-	stack_zombie.announce();
-	event.setZombieType("HEAP_type");
-	heap_zombie = event.newZombie("Heap");
-	heap_zombie->announce();
-	delete heap_zombie;
-	srand((unsigned int)time(NULL));
-	count = 0;
-	while (count < CREATE_ZOMBIE_NUM)
-	{
-		rand_zombie[count] = event.randomChump();
-		count++;
-	}
-	count = 0;
-	while (count < CREATE_ZOMBIE_NUM)
-	{
-		delete rand_zombie[count];
-		count++;
-	}
-	//while  (1);
+	std::cout << "string   : " << &str << std::endl;
+	stringPTR(&str);
+	stringREF(str);
 	return (0);
 }

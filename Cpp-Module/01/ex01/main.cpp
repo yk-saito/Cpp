@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:24 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 14:19:08 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 17:40:39 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 18:14:50 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "Zombie.hpp"
 
-# include <string>
+int	main(void)
+{
+	Zombie	*zombies;
+	int		N = 5;
+	int		count = 0;
 
-class Zombie {
-private:
-	std::string	m_name;
-	std::string	m_type;
-public:
-	Zombie();
-	Zombie(std::string name,  std::string type);
-	~Zombie();
-	void	announce();
-};
-
-#endif // _ZOMBIE_HPP_
+	zombies = zombieHorde(N, "Alice");
+	while (count < N)
+	{
+		zombies[count].announce();
+		count++;
+	}
+	delete[] zombies;
+	return (0);
+}

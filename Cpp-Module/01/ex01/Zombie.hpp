@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 18:23:45 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/15 17:20:31 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 13:48:45 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 18:13:07 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEHORDE_HPP_
-# define _ZOMBIEHORDE_HPP_
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-# include "Zombie.hpp"
+#include <string>
 
-# define STORE_ZOMBIE_NUM 6
-
-class ZombieHorde : public Zombie {
+class Zombie {
 private:
-	Zombie		*m_zombies;
-	int			m_zombies_num;
+	std::string	m_name;
 public:
-	ZombieHorde();
-	ZombieHorde(int N);
-	~ZombieHorde();
-	int		createRandomNum();
-	void	setRandomName();
+	Zombie();
+	Zombie(std::string name);
+	~Zombie();
+	void	setName(std::string name);
 	void	announce();
 };
 
-#endif // _ZOMBIEHORDE_HPP_
+Zombie* zombieHorde(int N, std::string name);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 13:48:45 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 14:09:48 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/24 17:39:34 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Zombie {
 private:
 	std::string	m_name;
 public:
-	// Zombie();
 	Zombie(std::string name);
 	~Zombie();
 	void	announce();

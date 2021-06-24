@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 22:05:24 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/05 16:50:08 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/24 17:39:52 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/24 18:15:02 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "Zombie.hpp"
+#include <iostream>
 
-# include <string>
+Zombie* zombieHorde(int N, std::string name)
+{
+	Zombie	*zombies;
+	int	count = 0;
 
-class Zombie {
-private:
-	std::string	m_name;
-	std::string	m_type;
-public:
-	Zombie();
-	Zombie(std::string name,  std::string type);
-	~Zombie();
-	void	setName(const char *name);
-	void	announce();
-};
-
-#endif // _ZOMBIE_HPP_
+	try
+	{
+		zombies = new Zombie[5];
+	}
+	catch(const std::bad_alloc& ba)
+	{
+		std::cerr << "Caught Error " << ba.what() << std::endl;
+		return (NULL);
+	}
+	while (count < N)
+	{
+		zombies[count].setName(name);
+		count++;
+	}
+	return (zombies);
+}

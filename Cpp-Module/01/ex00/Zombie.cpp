@@ -6,16 +6,12 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:09:28 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 14:09:33 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/24 17:35:29 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
-
-// Zombie::Zombie()
-// {
-// }
 
 Zombie::Zombie(std::string name)
 {
@@ -30,5 +26,4 @@ Zombie::~Zombie()
 void	Zombie::announce()
 {
 	std::cout << "< "  << m_name << " >" << " BraiiiiiiinnnzzzZ..." << std::endl;
-	// std::cout << "< "  << zombieName << " (" << m_type << ") >　" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
