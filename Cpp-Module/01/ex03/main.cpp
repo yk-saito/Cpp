@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:38:29 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/24 21:39:34 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/25 19:54:57 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int	main()
+int	main(void)
 {
 	{
 		Weapon club = Weapon("crude spiked club");
@@ -31,4 +31,5 @@ int	main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	return (0);
 }
