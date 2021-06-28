@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 17:29:43 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/04 19:36:17 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/27 19:26:04 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/28 16:03:47 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
-#include <iostream>
+#include "Karen.hpp"
 
 int	main(void)
 {
-	Human bob;
+	Karen	Karen;
 
-	std::cout << bob.identify() << std::endl;
-	std::cout << bob.getBrain().identify() << std::endl;
-
+	Karen.complain("DEBUG");
+	// Karen.complain("INFO");
+	// Karen.complain("WARNING");
+	// Karen.complain("ERROR");
+	// Karen.complain("HOGE");
 	return (0);
 }

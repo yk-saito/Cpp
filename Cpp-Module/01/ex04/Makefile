@@ -5,17 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/24 21:37:22 by ysaito            #+#    #+#              #
-#    Updated: 2021/06/26 20:18:55 by ysaito           ###   ########.fr        #
+#    Created: 2021/06/27 07:52:36 by ysaito            #+#    #+#              #
+#    Updated: 2021/06/27 07:52:45 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= weapon
+NAME		= replace
 SRC_DIR		= .
 SRC_FILE	= main.cpp
-SRC_FILE	+= HumanA.cpp
-SRC_FILE	+= HumanB.cpp
-SRC_FILE	+= Weapon.cpp
+SRC_FILE	+= File.cpp
 SRCS		= $(addprefix $(SRC_DIR)/,$(SRC_FILE))
 OBJS		= $(SRCS:.cpp=.o)
 

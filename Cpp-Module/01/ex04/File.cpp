@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 17:07:40 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/21 17:40:38 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/27 17:54:04 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ File::~File()
 
 bool	File::openFile()
 {
-	m_file.open(m_fileName, std::ios::in);
+	m_file.open(m_fileName, std::ios::in | std::ios::out);
 	if  (! m_file.is_open())
 	{
 		std::cerr << "The file did not open." << std::endl;
@@ -73,7 +73,8 @@ void	File::readAndReplace()
 			std::string::size_type	pos = 0;
 			while ((pos = buf.find(m_srcStr, pos)) != std::string::npos)
 			{
-				buf.replace(pos, m_srcStr.length(), m_replaceStr);
+				buf.erase(pos, m_srcStr.length());
+				buf.insert(pos, m_replaceStr);
 				pos += m_replaceStr.length();
 			}
 			m_newFile << buf <<  std::endl;

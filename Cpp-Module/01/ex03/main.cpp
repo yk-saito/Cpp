@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:38:29 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/25 19:54:57 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/26 20:14:08 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,10 @@ int	main(void)
 	}
 	return (0);
 }
+
+/*
+Bob attacks with his crude spiked club
+Bob attacks with his some other type of club
+Jim attacks with his crude spiked club
+Jim attacks with his some other type of club
+*/
