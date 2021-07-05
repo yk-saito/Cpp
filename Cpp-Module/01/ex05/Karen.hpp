@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:23:07 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/28 16:10:45 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/27 19:28:34 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/29 16:47:05 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,13 @@
 
 # include <string>
 
-enum	Levels
-{
-	DEBUG,
-	INFO,
-	WARNING,
-	ERROR
-};
-
-class Karen	{
+class Karen {
 private:
-	static void	debug(void);
-	static void	info(void);
-	static void	warning(void);
-	static void	error(void);
+	static void		debug(void);
+	static void		info(void);
+	static void		warning(void);
+	static void		error(void);
+	static const	std::string	Levels[4];
 public:
 	Karen();
 	~Karen();

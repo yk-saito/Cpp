@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:26:04 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/29 16:06:29 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/27 19:28:34 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/29 16:46:51 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
-#include <iostream>
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-int	main(void)
-{
-	Karen	Karen;
+# include <string>
 
-	Karen.complain("DEBUG");
-	Karen.complain("INFO");
-	Karen.complain("WARNING");
-	Karen.complain("ERROR");
-	Karen.complain("HOGE");
-	return (0);
-}
+class Karen {
+private:
+	static void		debug(void);
+	static void		info(void);
+	static void		warning(void);
+	static void		error(void);
+	static const	std::string	Levels[4];
+public:
+	Karen();
+	~Karen();
+	void	complain(std::string level);
+};
+
+#endif

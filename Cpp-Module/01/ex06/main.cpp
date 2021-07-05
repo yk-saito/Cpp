@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:26:04 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/29 16:06:29 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/29 16:07:35 by ysaito            #+#    #+#             */
+/*   Updated: 2021/06/29 16:46:18 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
-#include <iostream>
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	Karen	Karen;
+	Karen	karen;
 
-	Karen.complain("DEBUG");
-	Karen.complain("INFO");
-	Karen.complain("WARNING");
-	Karen.complain("ERROR");
-	Karen.complain("HOGE");
+	if (argc == 2)
+		karen.complain(argv[1]);
 	return (0);
 }

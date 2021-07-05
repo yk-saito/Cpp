@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:26:04 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/29 16:06:29 by ysaito           ###   ########.fr       */
+/*   Created: 2021/06/30 20:32:37 by ysaito            #+#    #+#             */
+/*   Updated: 2021/07/05 17:16:35 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int	main(void)
-{
-	Karen	Karen;
+class Fixed {
 
-	Karen.complain("DEBUG");
-	Karen.complain("INFO");
-	Karen.complain("WARNING");
-	Karen.complain("ERROR");
-	Karen.complain("HOGE");
-	return (0);
-}
+private:
+	int					m_fixed_value;
+	static const int	m_bits;
+public:
+	Fixed(); //  initializes the fixed point value to 0.
+	Fixed(const Fixed& other); // copy constructor
+ 	~Fixed();
+	void	operator=(const Fixed& other);// assignation operator overload
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+};
+
+#endif

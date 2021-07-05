@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:28:34 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/30 14:51:26 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/06/30 14:51:21 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,14 @@ void	Karen::complain(std::string level)
 	{
 		if (Levels[index] == level)
 		{
-			std::cout << "[ " << Levels[index] << " ]" << std::endl;
-			class_func[index]();
-			break ;
+			for (; index < 4; index++)
+			{
+				std::cout << "[ " << Levels[index] << " ]" << std::endl;
+				class_func[index]();
+				std::cout << std::endl;
+			}
+			return ;
 		}
 	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
