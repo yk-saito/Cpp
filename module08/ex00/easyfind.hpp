@@ -6,14 +6,13 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:48:26 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/19 00:18:16 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/21 22:16:35 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-#include <algorithm>
 #include <exception>
 #include <vector>
 
@@ -41,4 +40,4 @@ void	easyfind(const std::vector<T>& vector , const int parameter)
 	throw (NotFoundException());
 }
 
-#endif
+#endif /* EASYFIND_HPP */

@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 19:22:39 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/18 08:45:26 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:05:04 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,81 @@
 
 #include "iter.hpp"
 
-template <typename T>
-void	ft_show_array(const T* array, const size_t length, const std::string type)
+/*
+**	test
+*/
+class Awesome
 {
-	if (array == NULL)
-		return ;
-	std::cout << "\nShow array type: " << type << std::endl;
-	for (size_t i = 0; i < length; i++)
-	{
-		std::cout << "array[" << i << "] = [" << array[i] << "]" << std::endl;
-	}
-}
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int	get( void ) const { return this->_n; }
+private:
+	int _n;
+};
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
+
+/*
+**	test my clear_element()
+*/
 template <typename T>
-void	ft_zero_clear(T& element)
+void	clear_element(T& element)
 {
 	element = static_cast<T>(0);
 }
 
 template <>
-void	ft_zero_clear<std::string>(std::string& element)
+void	clear_element<std::string>(std::string& element)
 {
 	element =  "";
 }
 
+template< typename T >
+void my_print( T const & x )
+{
+	std::cout << "[" << x << "]" << std::endl;
+	return;
+}
+
+
 int	main()
 {
-	int			array_i[3] = {1, 2, 3};
+	/********/
+	/* test */
+	/********/
+	std::cout << "\n-----test------" <<  std::endl;
+	int		tab[] = {0, 1, 2, 3, 4};
+	Awesome	tab2[5];
+
+	iter(tab, 5, print);
+	iter(tab2, 5, print);
+
+	/***************************/
+	/* test my clear_element() */
+	/***************************/
 	double		array_d[3] = {1.1, 2.2, 3.3};
 	char		array_c[3] = {'a', 'b', 'c'};
-	std::string	array_s[3] = {"test1", "test2" , "test3"};
+	std::string	array_s[3] = {"test1", "test2", "test3"};
 
-	const std::size_t	array_i_size = (sizeof(array_i) / sizeof(array_i[0]));
 	const std::size_t	array_d_size = (sizeof(array_d) / sizeof(array_d[0]));
 	const std::size_t	array_c_size = (sizeof(array_c) / sizeof(array_c[0]));
 	const std::size_t	array_s_size = (sizeof(array_s) / sizeof(array_s[0]));
 
 	std::cout << "\n-----before-----" <<  std::endl;
+	iter(array_d, array_d_size, my_print);
+	iter(array_c, array_c_size, my_print);
+	iter(array_s, array_s_size, my_print);
 
-	ft_show_array(array_i, array_i_size, "int");
-	ft_show_array(array_d, array_d_size, "double");
-	ft_show_array(array_c, array_c_size, "char");
-	ft_show_array(array_s, array_s_size, "string");
+	iter(array_d, array_d_size, clear_element);
+	iter(array_c, array_c_size, clear_element);
+	iter(array_s, array_s_size, clear_element);
 
-	::iter(array_i, array_i_size, &ft_zero_clear);
-	::iter(array_d, array_d_size, &ft_zero_clear);
-	::iter(array_c, array_c_size, &ft_zero_clear);
-	::iter(array_s, array_s_size, &ft_zero_clear);
-
-	std::cout << "\n-----after------" <<  std::endl;
-	ft_show_array(array_i, array_i_size, "int");
-	ft_show_array(array_d, array_d_size, "double");
-	ft_show_array(array_c, array_c_size, "char");
-	ft_show_array(array_s, array_s_size, "string");
+	std::cout << "-----after------" <<  std::endl;
+	iter(array_d, array_d_size, my_print);
+	iter(array_c, array_c_size, my_print);
+	iter(array_s, array_s_size, my_print);
 
 	return (0);
 }

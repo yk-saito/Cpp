@@ -5,24 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:48:18 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 20:00:03 by ysaito           ###   ########.fr       */
+/*   Created: 2021/10/21 20:39:06 by ysaito            #+#    #+#             */
+/*   Updated: 2021/10/21 21:50:51 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "easyfind.hpp"
+#include "span.hpp"
 
-int	main()
+int main()
 {
-	int					array_i[] = {-1, 4, 2, 3, 2, -5};
-	std::vector<int>	vector_i(array_i, array_i + (sizeof(array_i) / sizeof(int)));
+	Span sp = Span(5);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 
 	try
 	{
-		::easyfind(vector_i, 2);
-		::easyfind(vector_i, 10);
+		sp.addNumber(20);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		/* code */
 	}
 	catch(const std::exception& e)
 	{

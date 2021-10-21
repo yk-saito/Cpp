@@ -5,28 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:48:18 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 20:00:03 by ysaito           ###   ########.fr       */
+/*   Created: 2021/10/21 22:06:42 by ysaito            #+#    #+#             */
+/*   Updated: 2021/10/21 22:23:29 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "easyfind.hpp"
+#include "mutantstack.hpp"
 
-int	main()
+int main()
 {
-	int					array_i[] = {-1, 4, 2, 3, 2, -5};
-	std::vector<int>	vector_i(array_i, array_i + (sizeof(array_i) / sizeof(int)));
+	MutantStack<int> mstack;
 
-	try
+	mstack.push(5);
+	mstack.push(17);
+
+	std::cout << mstack.top() << std::endl;
+
+	mstack.pop();
+
+	std::cout << mstack.size() << std::endl;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
+	while (it != ite)
 	{
-		::easyfind(vector_i, 2);
-		::easyfind(vector_i, 10);
+		std::cout << *it << std::endl;
+		++it;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (0);
+	std::stack<int> s(mstack);
+	return 0;
 }

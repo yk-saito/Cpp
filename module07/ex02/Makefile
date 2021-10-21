@@ -6,11 +6,11 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 21:02:03 by ysaito            #+#    #+#              #
-#    Updated: 2021/10/07 21:02:10 by ysaito           ###   ########.fr        #
+#    Updated: 2021/10/21 13:53:11 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= array
+NAME		= a.out
 SRC_DIR		= .
 SRC_FILE	= main.cpp
 SRCS		= $(addprefix $(SRC_DIR)/,$(SRC_FILE))

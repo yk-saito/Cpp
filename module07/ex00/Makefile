@@ -6,11 +6,11 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 17:03:02 by ysaito            #+#    #+#              #
-#    Updated: 2021/10/14 12:55:52 by ysaito           ###   ########.fr        #
+#    Updated: 2021/10/21 13:53:21 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= whatever
+NAME		= a.out
 SRC_DIR		= .
 SRC_FILE	= main.cpp
 SRCS		= $(addprefix $(SRC_DIR)/,$(SRC_FILE))

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mutantstack.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:48:18 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 20:00:03 by ysaito           ###   ########.fr       */
+/*   Created: 2021/10/21 22:15:53 by ysaito            #+#    #+#             */
+/*   Updated: 2021/10/21 22:16:17 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "mutantstack.hpp"
 
-#include "easyfind.hpp"
+MutantStack::MutantStack()
+{}
 
-int	main()
-{
-	int					array_i[] = {-1, 4, 2, 3, 2, -5};
-	std::vector<int>	vector_i(array_i, array_i + (sizeof(array_i) / sizeof(int)));
-
-	try
-	{
-		::easyfind(vector_i, 2);
-		::easyfind(vector_i, 10);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (0);
-}
+MutantStack::~MutantStack()
+{}

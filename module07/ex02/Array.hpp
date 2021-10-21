@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 21:02:49 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/17 00:16:51 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:18:12 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ public:
 		return (*this);
 	};
 
-	T&	operator[](const unsigned int index) {
-		if (index >= this->size_)
+	T&	operator[](const long long index) {
+		if (index < 0 || index >= this->size_)
 			throw (std::out_of_range("out_of_range: invalid index!"));
 		return (this->array_[index]);
 	};

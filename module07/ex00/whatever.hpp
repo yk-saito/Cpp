@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:04:57 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/17 23:15:02 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:06:34 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 template <typename T>
 void	swap(T& left, T& right)
 {
-	T	tmp;
+	T	tmp(left);
 
-	tmp = left;
 	left = right;
 	right = tmp;
 }

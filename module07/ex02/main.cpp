@@ -6,14 +6,53 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 21:12:23 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/17 21:19:52 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/21 19:47:35 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+
 #include "Array.hpp"
 
 #define	MAX_VAL 750
+
+class   Dog {
+public:
+    Dog() : name_("no name"), age_(0){}
+    Dog(const std::string name, unsigned int age) : name_(name), age_(age) {}
+    Dog(const Dog& other) {
+        *this = other;
+    }
+    Dog&	operator=(const Dog& other) {
+		if (this == &other)
+			return (*this);
+		this->name_ = other.name_;
+        this->age_ = other.age_;
+		return (*this);
+	}
+    std::string getName() const { return (this->name_); }
+    unsigned int getAge() const { return (this->age_); }
+private:
+    std::string     name_;
+    unsigned int    age_;
+};
+std::ostream&	operator<<(std::ostream& os, const Dog& other)
+{
+	os << "Name[ " << other.getName() << " ] Age[ " << other.getAge() << " ]";
+	return os;
+}
+
+template <typename T>
+void    show_array_elements(Array<T> array, std::string variable_name)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        std::cout << variable_name << "[" << i << "] = " << array[i] << std::endl;
+    }
+    std::cout << std::endl;
+
+}
 
 int	main(int, char**)
 {
@@ -25,31 +64,29 @@ int	main(int, char**)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
-
-        /*  add  */
-        // if (i < 3)
-        //     std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
-        /*********/
     }
+    /* add */
+    show_array_elements(numbers, "numbers");
+    /*******/
+
     //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
 
-        /*  add  */
-        // std::cout << "\n----- check 1 -----" << std::endl;
-        // std::cout << "numbers[0]: " << numbers[0] << std::endl;
-        // std::cout << "    tmp[0]: " << tmp[0] << std::endl;
-        // std::cout << "   test[0]: " << test[0] << std::endl;
+        /* add */
+        std::cout << "----- check 1 -----" << std::endl;
+        show_array_elements(tmp, "tmp");
+        show_array_elements(test, "test");
 
-        // tmp[0] = 11;
-        // test[0] = 22;
+        tmp[0] = 11;
+        test[0] = 22;
 
-        // std::cout << "----- check 2 -----" << std::endl;
-        // std::cout << "numbers[0]: " << numbers[0] << std::endl;
-        // std::cout << "    tmp[0]: " << tmp[0] << std::endl;
-        // std::cout << "   test[0]: " << test[0] << '\n' << std::endl;
-        /*********/
+        std::cout << "----- check 2 -----" << std::endl;
+        show_array_elements(numbers, "numbers");
+        show_array_elements(tmp, "tmp");
+        show_array_elements(test, "test");
+        /*******/
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -66,7 +103,7 @@ int	main(int, char**)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     try
     {
@@ -74,18 +111,51 @@ int	main(int, char**)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << "\n\n";
+        std::cerr << e.what() << '\n' << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
-
-        /*  add  */
-        // if (i < 3)
-        //     std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
-        /*********/
     }
+    /* add */
+    show_array_elements(numbers, "numbers");
+    /*******/
     delete [] mirror;//
+
+
+    /*********************/
+    /* Test complex type */
+    /*********************/
+    std::cout << "----- Create Dog array -----" << std::endl;
+
+    Array<Dog> dogs(3);
+    show_array_elements(dogs, "dogs");
+
+    Array<Dog> tmp_dogs = dogs;
+    Array<Dog> test_dogs(tmp_dogs);
+
+    show_array_elements(tmp_dogs, "tmp_dogs");
+    show_array_elements(test_dogs, "test_dogs");
+
+    dogs[0] = Dog("kotaro", 5);
+    tmp_dogs[0] = Dog("nana", 2);
+    test_dogs[0] = Dog("momo", 10);
+
+    std::cout << "-----   Check rename   -----" << std::endl;
+    show_array_elements(dogs, "dogs");
+    show_array_elements(tmp_dogs, "tmp_dogs");
+    show_array_elements(test_dogs, "test_dogs");
+
+    try
+    {
+        dogs[10] = Dog("ace", 4);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
+
     return 0;
 }
