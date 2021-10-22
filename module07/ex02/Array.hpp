@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 21:02:49 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 16:18:12 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/22 21:10:18 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,11 @@ template <typename T>
 class Array
 {
 public:
-	Array() : array_(new T[0]()), size_(0) {
-	};
-
-	Array(unsigned int n) : array_(new T[n]()), size_(n) {
-	};
-
+	Array() : array_(new T[0]()), size_(0) {}
+	Array(unsigned int n) : array_(new T[n]()), size_(n) {}
 	Array(const Array& other) {
 		*this = other;
-	};
-
-	~Array() {
-		delete[] this->array_;
-	};
-
+	}
 	Array&	operator=(const Array& other) {
 		if (this == &other)
 			return (*this);
@@ -44,18 +35,23 @@ public:
 			this->array_[i] = other.array_[i];
 		}
 		return (*this);
-	};
-
-	T&	operator[](const long long index) {
-		if (index < 0 || index >= this->size_)
+	}
+	~Array() {
+		delete[] this->array_;
+	}
+	T&	operator[](const unsigned int index) {
+		if (index >= this->size_)
 			throw (std::out_of_range("out_of_range: invalid index!"));
 		return (this->array_[index]);
-	};
-
-	unsigned int	size() {
+	}
+	const T&	operator[](const unsigned int index) const {
+		if (index >= this->size_)
+			throw (std::out_of_range("out_of_range: invalid index!"));
+		return (this->array_[index]);
+	}
+	unsigned int	size() const {
 		return (this->size_);
-	};
-
+	}
 private:
 	T*				array_;
 	unsigned int	size_;

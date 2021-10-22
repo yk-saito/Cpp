@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:13:45 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 16:04:26 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/22 14:53:34 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ public:
 	bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
 	bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
 	bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
-	//add
-	int	Getter() const { return (_n); }
+	int	Getter() const { return (_n); } // add
 private:
 	int _n;
 };

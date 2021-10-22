@@ -6,7 +6,7 @@
 #    By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 19:22:19 by ysaito            #+#    #+#              #
-#    Updated: 2021/10/21 13:53:24 by ysaito           ###   ########.fr        #
+#    Updated: 2021/10/22 17:46:36 by ysaito           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CXXFLAGS	= -Wall -Wextra -Werror
 RM			= rm -f
 
 $(NAME):	$(OBJS)
-			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+			$(CXX) $(CXXFLAGS) -o $@ $^
 
 all:		$(NAME)
 

@@ -6,11 +6,12 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 22:06:42 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/21 22:23:29 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/22 18:08:32 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stack>
 
 #include "mutantstack.hpp"
 
