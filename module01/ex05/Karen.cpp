@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:28:34 by ysaito            #+#    #+#             */
-/*   Updated: 2021/06/30 14:51:26 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:05:43 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	Karen::complain(std::string level)
 		&Karen::warning,
 		&Karen::error
 	};
-
 	for (int index =  0; index < 4; index++)
 	{
 		if (Levels[index] == level)
