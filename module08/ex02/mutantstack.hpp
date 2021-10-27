@@ -6,7 +6,7 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 22:06:24 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/22 22:18:25 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/27 14:49:05 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ public:
 	MutantStack<T>::iterator	end();
 	const MutantStack<T>::iterator	end()const;
 private:
-
+	std::stack<T>	stack_;
 };
 
 #endif /* MUTANTSTACK_HPP */

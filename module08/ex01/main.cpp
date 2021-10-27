@@ -6,13 +6,16 @@
 /*   By: ysaito <ysaito@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:39:06 by ysaito            #+#    #+#             */
-/*   Updated: 2021/10/26 22:44:49 by ysaito           ###   ########.fr       */
+/*   Updated: 2021/10/27 18:17:15 by ysaito           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "span.hpp"
+
+# define RANDOM_RANGE 100000
+# define SPAN_LANGE 10000
 
 int main()
 {
@@ -23,19 +26,12 @@ int main()
 	sp.addNumber(9);
 	sp.addNumber(11);
 
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+	std::cout << " longest: " << sp.longestSpan() << std::endl;
 
-	//de
-	std::vector<int>::iterator it = sp.begin();
-	std::cout << "----- check vector elements -----" << std::endl;
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << *it << std::endl;
-		it++;
-	}
-	std::cout << "---------------------------------" << std::endl;
-	//de
+	Span	test1(sp);
+	Span	test2 = sp;
+
 	try
 	{
 		sp.addNumber(20);
@@ -45,15 +41,15 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 
-/*
-**	No numbers stored
-*/
+/*********************/
+/* No numbers stored */
+/*********************/
 	std::cout << "\n----- No numbers stored -----" << std::endl;
-	Span empty_sp = Span(3);
 
+	Span empty_sp = Span(3);
 	try
 	{
-		std::cout << empty_sp.shortestSpan() << std::endl;
+		std::cout << "shortest: " << empty_sp.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -61,22 +57,22 @@ int main()
 	}
 	try
 	{
-		std::cout << empty_sp.longestSpan() << std::endl;
+		std::cout << " longest: " << empty_sp.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-/*
-**	Stored only one
-*/
+/*******************/
+/* Stored only one */
+/*******************/
 	std::cout << "\n----- Stored only one -----" << std::endl;
 
 	Span one_sp = Span(3);
 	one_sp.addNumber(1);
 	try
 	{
-		std::cout << one_sp.shortestSpan() << std::endl;
+		std::cout << "shortest: " << one_sp.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -84,38 +80,44 @@ int main()
 	}
 	try
 	{
-		std::cout << one_sp.longestSpan() << std::endl;
+		std::cout << " longest: " << one_sp.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
-/*
-** 10000
-*/
-	std::cout << "\n----- 10000 -----" << std::endl;
+/**********/
+/* random */
+/**********/
+	std::cout << "\n----- Random -----" << std::endl;
+
+	std::vector<int> large_vec(RANDOM_RANGE);
+	VectorIterator	itr = large_vec.begin();
+	VectorIterator	itr_end = large_vec.end();
+
+	srand(time(NULL));
+	VectorIterator tmp = itr;
+   	for (; tmp != itr_end; ++tmp)
+	{
+       	*tmp = rand() % RANDOM_RANGE;
+    }
 	try
 	{
-		Span	large_sp(10000);
-		std::vector<int>::iterator itr = large_sp.begin();
-		std::vector<int>::iterator itr_end = large_sp.end();
+		Span	large_span(SPAN_LANGE);
 
-		srand(time(NULL));
-		int	count = 0;//del
-   		for (; itr != itr_end; ++itr)
-		{
-        	*itr = rand();
-			std::cout << *itr << std::endl;
-			count++;
-			// itr++;
-    	}
-		std::cout << one_sp.shortestSpan() << std::endl;
-		std::cout << one_sp.longestSpan() << std::endl;
+		large_span.addNumberFromItr(itr, itr + SPAN_LANGE);
+		large_span.printNumber(5);
+		large_span.printNumberEnd(5);
+
+		std::cout << "shortest: " << large_span.shortestSpan() << std::endl;
+		std::cout << " longest: " << large_span.longestSpan() << std::endl;
+
+		large_span.addNumber(10);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
 	return (0);
 }
